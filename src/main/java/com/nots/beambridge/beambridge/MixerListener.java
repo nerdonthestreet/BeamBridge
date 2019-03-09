@@ -69,7 +69,9 @@ public class MixerListener extends ListenerAdapter {
         	System.out.println("Mixer message received: " + messageFromMixer); // Print message from Mixer to console.
             
         	// Only forward the message if it does not start with an opening bracket (this avoids echo/loops).
-            if ((messageFromMixer.charAt(0) != '[') && (messageFromMixer.startsWith("Welcome to the Experience,") == false)) {
+        	//  We also make sure the message is not our own greeting message to new chatters-- PircBotX does this
+        	//  automatically in IRC, so we do it on Mixer for consistency.
+            if ((messageFromMixer.charAt(0) != '[') && (messageFromMixer.startsWith("Welcome to the stream,") == false)) {
               try {
             	  // Forward the message to IRC.
 				  RelayMessage.sendMessageFromMixerToIrc(messageFromMixer, sendingMixerUser);

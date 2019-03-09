@@ -47,7 +47,7 @@ public class BotListener extends ListenerAdapter {
     // This code will run when a user joins IRC.
     public void onJoin(JoinEvent event) throws Exception {
     	// Send the user a welcome message (todo: make this configurable.)
-    	String LocalJoinMessage = "Welcome to the Experience, " + event.getUser().getNick().toString() + "!";
+    	String LocalJoinMessage = "Welcome to the stream, " + event.getUser().getNick().toString() + "!";
     	String joinedChannel = event.getChannel().getName().toString();
     	event.getBot().send().message(joinedChannel, LocalJoinMessage);
     	
