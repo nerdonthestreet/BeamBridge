@@ -8,12 +8,18 @@ Some pieces are still hard-coded into the build for now (such as the channel joi
 
 ## Usage
 
-Once you have filled out the configuration file, simply run the Jar file (after building BeamBridge, if necessary) with the following syntax:
+Once you have filled out the configuration file, simply run the JAR file (after building BeamBridge, if necessary) with the following syntax:
 
 'java -jar ./BeamBridge-Build007-public.jar ./BeamBridge-properties.config'
 
-As seen above, you just need to run the Jar file in Java, and pass in the config file's location as the first and only argument.
+As seen above, you just need to run the JAR file in Java, and pass in the config file's location as the first and only argument.
 
 ## Browing the code
 
 This Git repo is an Eclipse Java project (you can clone the repo and open the root folder in Eclipse as a project.) The actual Java source files are located at /src/main/java/com/nots/beambridge/beambridge/*.java. The Maven configuration file (pom.xml) will automatically include dependencies, including PircBotX (licensed under GPLv3) and the Mixer API (licensed under MIT/Expat.)
+
+## Prebuilt releases
+
+While the source code for this program is mirrored on both GitLab and GitHub, releases are only published on GitHub (because GitHub's release system is easier to use and provides free hosting for the built files.) You can browse and download releases here: https://github.com/jacobgkau/BeamBridge/releases
+
+In the event that we have issues with GitHub's release system, I may begin offering builds hosted on NOTS infrastructure as well. Contact me at jacob@nerdonthestreet.com if you see a need for this.
