@@ -18,7 +18,7 @@ import com.mixer.api.resource.chat.methods.ChatSendMethod;
 import com.mixer.api.resource.chat.replies.AuthenticationReply;
 import com.mixer.api.resource.chat.replies.ReplyHandler;
 
-public class BotListener extends ListenerAdapter {
+public class IrcBot extends ListenerAdapter {
 
 	// We are declaring another PircBotX object,
 	// which will end up being a copy of the first one (ircBot) after initialization.
