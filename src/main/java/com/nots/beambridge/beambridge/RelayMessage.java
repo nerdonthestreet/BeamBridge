@@ -48,6 +48,6 @@ public class RelayMessage {
 		
 		String message = "[" + SendingIrcUser + "]" + " " + RawIrcMessage;
 		
-		MixerListener.mixerBotGlobal.send(ChatSendMethod.of(message));
+		MixerBot.mixerBotGlobal.send(ChatSendMethod.of(message));
 	}
 }

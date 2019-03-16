@@ -20,7 +20,7 @@ import com.mixer.api.resource.chat.ws.MixerChatConnectable;
 import com.mixer.api.services.impl.ChatService;
 import com.mixer.api.services.impl.UsersService;
 
-public class MixerListener extends ListenerAdapter {
+public class MixerBot extends ListenerAdapter {
 	
 	public static MixerChatConnectable mixerBotGlobal;
     

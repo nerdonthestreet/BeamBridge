@@ -28,7 +28,7 @@ import org.pircbotx.output.*;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
-import com.nots.beambridge.beambridge.MixerListener;
+import com.nots.beambridge.beambridge.MixerBot;
 
 public class BeamBridgeMain extends ListenerAdapter {
 	
@@ -43,10 +43,10 @@ public class BeamBridgeMain extends ListenerAdapter {
     	// Add both our IRC bot and our Mixer bot to the listener so they can communicate through events.
         ListenerManager listenerManager = new ThreadedListenerManager();
         listenerManager.addListener(new BotListener());
-        listenerManager.addListener(new MixerListener());
+        listenerManager.addListener(new MixerBot());
         
         // Start the Mixer bot.
-        MixerListener.mixerBot();
+        MixerBot.mixerBot();
        
         // Set up the IRC bot.
         final Configuration configuration = new Configuration.Builder()
