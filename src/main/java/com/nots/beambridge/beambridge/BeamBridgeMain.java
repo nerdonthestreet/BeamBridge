@@ -30,7 +30,7 @@ import java.util.concurrent.ExecutionException;
 
 import com.nots.beambridge.beambridge.MixerListener;
 
-public class Bot extends ListenerAdapter {
+public class BeamBridgeMain extends ListenerAdapter {
 	
 	// Declare our PircBotX object (type PircBotX from the PircBotX library).	
 	public static PircBotX ircBot;
