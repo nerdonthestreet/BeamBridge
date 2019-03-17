@@ -29,7 +29,7 @@ public class RelayMessage {
 		RelayMessage.SendingMixerUserGlobal = SendingMixerUser;
 		String message = "[" + SendingMixerUser + "]" + " " + RawMixerMessage;		
 		
-		IrcBot.ircBot2.send().message("#mikecast", message);
+		IrcBot.ircBot2.send().message(ConfigLoader.ircChannel, message);
 		
 
 	}
