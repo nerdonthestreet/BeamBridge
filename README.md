@@ -20,6 +20,18 @@ This Git repo is an Eclipse Java project (you can clone the repo and open the ro
 
 ## Prebuilt releases
 
-While the source code for this program is mirrored on both GitLab and GitHub, releases are only published on GitHub (because GitHub's release system is easier to use and provides free hosting for the built files.) You can browse and download releases here: https://github.com/jacobgkau/BeamBridge/releases
+While the source code for this program is mirrored on both GitLab and GitHub, releases are only published on GitHub (because GitHub's release system is easier to use and provides free hosting for the built files.) You can browse and download releases here: [https://github.com/jacobgkau/BeamBridge/releases](https://github.com/jacobgkau/BeamBridge/releases)
 
-In the event that we have issues with GitHub's release system, I may begin offering builds hosted on NOTS infrastructure as well. Contact me at jacob@nerdonthestreet.com if you see a need for this.
+In the event that we have issues with GitHub's release system, I may begin offering builds hosted on NOTS infrastructure as well. Contact me at [jacob@nerdonthestreet.com](mailto:jacob@nerdonthestreet.com) if you see a need for this.
+
+## Supporting development
+
+If you find this bot useful, you can support development by joining the Nerd Club at [https://nerdclub.nots.co](https://nerdclub.nots.co).
+
+## License
+
+BeamBridge is licensed under the terms of the GNU GPLv3. The full text of this license is included in the LICENSE file.
+
+BeamBridge depends on [PircBotX](https://github.com/pircbotx/pircbotx), which is also licensed under the GPLv3.
+
+BeamBridge also depends on the [Mixer Java API](https://github.com/mixer/beam-client-java), which is licensed under the MIT License.
