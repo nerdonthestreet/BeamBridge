@@ -18,6 +18,8 @@ public class ConfigLoader {
 	static String ircChannel;
 	static String mixerUserJoinMessage;
 	static String ircUserJoinMessage;
+	static boolean mixerSendGreeting;
+	static boolean ircSendGreeting;
 	static List<String> mixerBannedWords;
 	
 	public static void loadConfig(String configFile) throws IOException {
@@ -36,6 +38,8 @@ public class ConfigLoader {
 		ConfigLoader.ircChannel = prop.getProperty("ircChannel");
 		ConfigLoader.mixerUserJoinMessage = prop.getProperty("mixerUserJoinMessage");
 		ConfigLoader.ircUserJoinMessage = prop.getProperty("ircUserJoinMessage");
+		ConfigLoader.mixerSendGreeting = Boolean.parseBoolean(prop.getProperty("mixerSendGreeting")); // Convert to bool.
+		ConfigLoader.ircSendGreeting = Boolean.parseBoolean(prop.getProperty("ircSendGreeting")); // Convert to bool.
 		
 		// The list of banned words needs to be read in as a string, then converted to a list.
 		String mixerBannedWordsString = prop.getProperty("mixerBannedWords");

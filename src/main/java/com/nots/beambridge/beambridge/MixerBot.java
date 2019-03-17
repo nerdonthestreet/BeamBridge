@@ -39,6 +39,7 @@ public class MixerBot extends ListenerAdapter {
         if (chatConnectable.connect()) {
             chatConnectable.send(AuthenticateMessage.from(user.channel, user, chat.authkey), new ReplyHandler<AuthenticationReply>() {
                 public void onSuccess(AuthenticationReply reply) {
+                	// Send Mixer message stating we're connected.
                     chatConnectable.send(ChatSendMethod.of("BeamBridge is connected."));
                     mixerBotGlobal = chatConnectable;
                 }
@@ -48,12 +49,15 @@ public class MixerBot extends ListenerAdapter {
             });
         }
         
-        // This code will run when a user joins the Mixer chat.
-        chatConnectable.on(UserJoinEvent.class, event -> {
-            chatConnectable.send(ChatSendMethod.of(
-                    String.format(ConfigLoader.mixerUserJoinMessage, // Pull in the configured message.
+        // Only listen for user joins & send greeting if the config option is enabled.
+        if (ConfigLoader.mixerSendGreeting == true) {        	
+        	// This code will run when a user joins the Mixer chat & the above config option is "true".
+        	chatConnectable.on(UserJoinEvent.class, event -> {
+        		chatConnectable.send(ChatSendMethod.of(
+        			String.format(ConfigLoader.mixerUserJoinMessage, // Pull in the configured message.
                     event.data.username))); // Substitute the user's name for %s.
-        });
+        	});
+        }
         
         // This code will run when a message is received on Mixer.
         chatConnectable.on(IncomingMessageEvent.class, event -> {

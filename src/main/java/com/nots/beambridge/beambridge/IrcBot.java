@@ -46,17 +46,20 @@ public class IrcBot extends ListenerAdapter {
     
     // This code will run when a user joins IRC.
     public void onJoin(JoinEvent event) throws Exception {
-    	// Send the user a welcome message, set in our config. Replace %u with the user's nick.
-    	String LocalJoinMessage = ConfigLoader.ircUserJoinMessage.replace("%u", event.getUser().getNick().toString());
-    	String joinedChannel = event.getChannel().getName().toString();
-    	event.getBot().send().message(joinedChannel, LocalJoinMessage);
     	
-    	// Use the user join event to set/update some properties that our PircBotX object will use to send messages.
-    	RelayMessage.myChannel = event.getChannel();
-    	RelayMessage.myUser = event.getUser();
-    	RelayMessage.myUserHostmask = event.getUserHostmask();
-        ircBot2 = event.getBot();
+    	// Only send greeting if the config option is enabled.
+    	if (ConfigLoader.ircSendGreeting == true) {
+    		
+    		// Send the user a welcome message, set in our config. Replace %u with the user's nick.
+    		String LocalJoinMessage = ConfigLoader.ircUserJoinMessage.replace("%u", event.getUser().getNick().toString());
+    		String joinedChannel = event.getChannel().getName().toString();
+    		event.getBot().send().message(joinedChannel, LocalJoinMessage);
+    	}
     	
+		// Use the user join event to set/update some properties that our PircBotX object will use to send messages.
+		RelayMessage.myChannel = event.getChannel();
+		RelayMessage.myUser = event.getUser();
+		RelayMessage.myUserHostmask = event.getUserHostmask();
+    	ircBot2 = event.getBot();
     }
-
 }
