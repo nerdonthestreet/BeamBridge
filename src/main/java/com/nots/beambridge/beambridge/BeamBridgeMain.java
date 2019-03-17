@@ -37,7 +37,8 @@ public class BeamBridgeMain extends ListenerAdapter {
                 .buildConfiguration();
         try {
         	// Apply the above configuration to our IRC bot.
-            final PircBotX ircBot = new PircBotX(configuration);
+            @SuppressWarnings("resource")
+			final PircBotX ircBot = new PircBotX(configuration);
             // Start the IRC bot.
             ircBot.startBot();
             
