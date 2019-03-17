@@ -2,11 +2,7 @@ package com.nots.beambridge.beambridge;
 
 import java.util.concurrent.ExecutionException;
 
-import org.pircbotx.hooks.Listener;
 import org.pircbotx.hooks.ListenerAdapter;
-import org.pircbotx.hooks.events.MessageEvent;
-import org.pircbotx.output.OutputRaw;
-
 import com.mixer.api.MixerAPI;
 import com.mixer.api.resource.MixerUser;
 import com.mixer.api.resource.chat.MixerChat;

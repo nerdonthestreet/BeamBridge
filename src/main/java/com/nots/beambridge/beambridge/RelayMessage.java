@@ -1,15 +1,8 @@
 package com.nots.beambridge.beambridge;
 
 import org.pircbotx.Channel;
-import org.pircbotx.PircBotX;
 import org.pircbotx.User;
 import org.pircbotx.UserHostmask;
-import org.pircbotx.Utils;
-import org.pircbotx.hooks.Event;
-import org.pircbotx.hooks.events.*;
-import org.pircbotx.Utils.*;
-import org.pircbotx.UserHostmask;
-
 import com.google.common.collect.ImmutableMap;
 import com.mixer.api.resource.chat.methods.ChatSendMethod;
 

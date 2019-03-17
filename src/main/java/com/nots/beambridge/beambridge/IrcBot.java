@@ -1,22 +1,9 @@
 package com.nots.beambridge.beambridge;
 
-import java.io.IOException;
-
-import org.pircbotx.Channel;
-import org.pircbotx.Colors;
 import org.pircbotx.hooks.ListenerAdapter;
-import org.pircbotx.hooks.events.ChannelInfoEvent;
-import org.pircbotx.hooks.events.ConnectEvent;
 import org.pircbotx.hooks.events.JoinEvent;
 import org.pircbotx.hooks.events.MessageEvent;
-import org.pircbotx.output.OutputRaw;
 import org.pircbotx.PircBotX;
-import org.pircbotx.UserHostmask;
-
-import com.mixer.api.resource.chat.methods.AuthenticateMessage;
-import com.mixer.api.resource.chat.methods.ChatSendMethod;
-import com.mixer.api.resource.chat.replies.AuthenticationReply;
-import com.mixer.api.resource.chat.replies.ReplyHandler;
 
 public class IrcBot extends ListenerAdapter {
 
