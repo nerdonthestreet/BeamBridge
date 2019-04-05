@@ -11,6 +11,7 @@ public class ConfigLoader {
 	
 	// Initialize attributes (global variables) we will use to store config values.
 	static int mixerChannelIdJoin;
+	static int mixerChannelUserId;
 	static String mixerOauthToken;
 	static String mixerClientId;
 	static String ircBotName;
@@ -18,8 +19,10 @@ public class ConfigLoader {
 	static String ircChannel;
 	static String mixerUserJoinMessage;
 	static String ircUserJoinMessage;
+	static String mixerGreetingVisibility;
 	static boolean mixerSendGreeting;
 	static boolean ircSendGreeting;
+	static boolean mixerGreetingCcHost;
 	static List<String> mixerBannedWords;
 	
 	public static void loadConfig(String configFile) throws IOException {
@@ -31,6 +34,7 @@ public class ConfigLoader {
 		
 		// Set our attributes (global variables).
 		ConfigLoader.mixerChannelIdJoin = Integer.parseInt(prop.getProperty("mixerChannelIdJoin")); // Convert to int.
+		ConfigLoader.mixerChannelUserId = Integer.parseInt(prop.getProperty("mixerChannelUserId")); // Convert to int.
 		ConfigLoader.mixerOauthToken = prop.getProperty("mixerOauthToken");
 		ConfigLoader.mixerClientId = prop.getProperty("mixerClientId");
 		ConfigLoader.ircBotName = prop.getProperty("ircBotName");
@@ -38,8 +42,10 @@ public class ConfigLoader {
 		ConfigLoader.ircChannel = prop.getProperty("ircChannel");
 		ConfigLoader.mixerUserJoinMessage = prop.getProperty("mixerUserJoinMessage");
 		ConfigLoader.ircUserJoinMessage = prop.getProperty("ircUserJoinMessage");
+		ConfigLoader.mixerGreetingVisibility = prop.getProperty("mixerGreetingVisibility");
 		ConfigLoader.mixerSendGreeting = Boolean.parseBoolean(prop.getProperty("mixerSendGreeting")); // Convert to bool.
 		ConfigLoader.ircSendGreeting = Boolean.parseBoolean(prop.getProperty("ircSendGreeting")); // Convert to bool.
+		ConfigLoader.mixerGreetingCcHost = Boolean.parseBoolean(prop.getProperty("mixerGreetingCcHost")); // Convert to bool.
 		
 		// The list of banned words needs to be read in as a string, then converted to a list.
 		String mixerBannedWordsString = prop.getProperty("mixerBannedWords");
