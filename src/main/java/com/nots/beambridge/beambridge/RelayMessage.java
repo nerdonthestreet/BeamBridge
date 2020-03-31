@@ -1,7 +1,6 @@
 package com.nots.beambridge.beambridge;
 
 import java.util.regex.Pattern;
-
 import org.pircbotx.Channel;
 import org.pircbotx.User;
 import org.pircbotx.UserHostmask;
