@@ -1,5 +1,7 @@
 package com.nots.beambridge.beambridge;
 
+import java.util.regex.Pattern;
+
 import org.pircbotx.Channel;
 import org.pircbotx.User;
 import org.pircbotx.UserHostmask;
@@ -31,7 +33,7 @@ public class RelayMessage {
 		
 		// Filter out any banned words first. 
 		for (String bannedMixerWord : ConfigLoader.mixerBannedWords) {
-			RawIrcMessage = RawIrcMessage.replaceAll(bannedMixerWord, "<filtered>");
+			RawIrcMessage = RawIrcMessage.replaceAll("(?i)"+Pattern.quote(bannedMixerWord), "<filtered>");
 		}
 		
 		// Forward the filtered message to Mixer.
