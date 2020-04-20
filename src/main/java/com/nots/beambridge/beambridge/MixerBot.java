@@ -1,6 +1,7 @@
 package com.nots.beambridge.beambridge;
 
 import java.util.concurrent.ExecutionException;
+import java.util.regex.Pattern;
 
 import org.pircbotx.hooks.ListenerAdapter;
 import com.mixer.api.MixerAPI;
@@ -116,7 +117,11 @@ public class MixerBot extends ListenerAdapter {
             } */
         	
         	// Assign the Mixer data to variables.
-            String messageFromMixer = event.data.message.message.get(0).text;
+            String messageFromMixer = "";
+            int messageComponentLength = event.data.message.message.size(); // Emotes, URLs, etc will split the message into multiple components.
+            for (int i = 0; i < messageComponentLength; i++) { // Add each component's text to the IRC message in order.
+            	messageFromMixer = messageFromMixer + event.data.message.message.get(i).text;
+            }
             String sendingMixerUser = event.data.userName;
         	System.out.println("Mixer message received: " + messageFromMixer); // Print message from Mixer to console.
             
