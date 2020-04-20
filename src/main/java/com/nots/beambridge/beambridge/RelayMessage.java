@@ -30,11 +30,13 @@ public class RelayMessage {
 	
 	public static void sendMessageFromIrcToMixer(String RawIrcMessage, String SendingIrcUser) throws Exception {
 		
-		// Filter out any banned words first. 
-		for (String bannedMixerWord : ConfigLoader.mixerBannedWords) {
-			RawIrcMessage = RawIrcMessage.replaceAll("(?i)"+Pattern.quote(bannedMixerWord), "<filtered>");
+		// Filter out any banned words first.
+		if (ConfigLoader.mixerBannedWords != null) { // Only run the filter if there are banned words configured.
+			for (String bannedMixerWord : ConfigLoader.mixerBannedWords) {
+				RawIrcMessage = RawIrcMessage.replaceAll("(?i)"+Pattern.quote(bannedMixerWord), "<filtered>");
+			}
 		}
-		
+			
 		// Forward the filtered message to Mixer.
 		System.out.println("Sending message from IRC to Mixer...");
 		RelayMessage.MessageFromIrcGlobal = RawIrcMessage;
@@ -43,5 +45,6 @@ public class RelayMessage {
 		String message = "[" + SendingIrcUser + "]" + " " + RawIrcMessage;
 		
 		MixerBot.mixerBotGlobal.send(ChatSendMethod.of(message));
+		
 	}
 }

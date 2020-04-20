@@ -49,7 +49,9 @@ public class ConfigLoader {
 		
 		// The list of banned words needs to be read in as a string, then converted to a list.
 		String mixerBannedWordsString = prop.getProperty("mixerBannedWords");
-		ConfigLoader.mixerBannedWords = Arrays.asList(mixerBannedWordsString.split("\\s*,\\s*"));
+		if (mixerBannedWordsString.toCharArray().length != 0) { // Only populate the list if there's at least one banned word configured.
+			ConfigLoader.mixerBannedWords = Arrays.asList(mixerBannedWordsString.split("\\s*,\\s*"));
+		}
 		
 	}
 }
