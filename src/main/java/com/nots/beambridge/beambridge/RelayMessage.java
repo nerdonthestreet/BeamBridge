@@ -36,7 +36,7 @@ public class RelayMessage {
 				RawIrcMessage = RawIrcMessage.replaceAll("(?i)"+Pattern.quote(bannedMixerWord), "<filtered>");
 			}
 		}
-			
+		
 		// Forward the filtered message to Mixer.
 		System.out.println("Sending message from IRC to Mixer...");
 		RelayMessage.MessageFromIrcGlobal = RawIrcMessage;
